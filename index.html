@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển</title>
+</head>
+<body>
+<p style="text-align: center; font-size: 50px;"><strong>Từ điển Anh - Việt</strong></p>
+<input id="word" type="text"/>
+<button onclick="TraCuu()">Tra cứu</button>
+<p style="font-size: 18px"><strong>Ý nghĩa:</strong></p>
+<p id="means"></p>
+<script>
+    console.log(typeof(document.getElementById("word").value));
+    function TraCuu() {
+        let English = ["hello", "apple", "orange", "one", "two", "three"];
+        let Vietnamese = ["xin chào", "quả táo", "quả cam", "một", "hai", "ba"];
+        let word = document.getElementById("word").value.toString();
+        // let word = document.getElementById("word");
+        let index = -1;
+        for (let i=0; i < English.length; i++){
+            if (English[i] == word){
+                index = i;
+                break;
+            }
+        }
+        console.log(index);
+        document.getElementById("means").innerHTML = Vietnamese[index];
+    }
+</script>
+</body>
+</html>
